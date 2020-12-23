@@ -23,5 +23,5 @@ if (Meteor.isCordova) {
 }
 
 function onReady() {
-    Angular.bootstrap(document, [])
+    Angular.bootstrap(document, [App])
 }
