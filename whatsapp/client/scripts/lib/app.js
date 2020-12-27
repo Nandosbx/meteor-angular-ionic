@@ -9,12 +9,13 @@ import Loader from 'angular-ecmascript/module-loader'
 import { Meteor } from 'meteor/meteor'
 
 import RoutesConfig from '../routes'
+import ChatsCtrl from '../controllers/chats.controller';
 
 const App = 'Whatsapp'
 
 Angular.module(App, ['angular-meteor', 'ionic'])
 
-new Loader(App).load(RoutesConfig)
+new Loader(App).load(ChatsCtrl).load(RoutesConfig)
 
 if (Meteor.isCordova) {
     Angular.element(document).on('deviceready', onReady)
@@ -24,4 +25,5 @@ if (Meteor.isCordova) {
 
 function onReady() {
     Angular.bootstrap(document, [App])
+
 }
